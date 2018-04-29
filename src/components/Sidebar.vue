@@ -1,0 +1,108 @@
+<template>
+  <aside class="app-sidebar">
+    <div class="app-sidebar__container">
+      <div class="app-sidebar__content">
+        <div class="logo-wrapper">
+          <span class="logo"></span>
+        </div>
+        <div class="profile">
+          <h2>Drew Rawitz</h2>
+          <p>Front-end Developer</p>
+        </div>
+        <Navigation />
+      </div>
+      <div class="app-sidebar__footer">
+        <ul>
+          <li>
+            <a href="#"><TwitterIcon /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</template>
+
+<script>
+import Navigation from './Navigation';
+import TwitterIcon from '../assets/svg/twitter.svg';
+
+export default {
+  name: 'Sidebar',
+  components: {
+    Navigation,
+    TwitterIcon,
+  },
+};
+</script>
+
+<style scoped>
+.app-sidebar {
+  grid-area: sidebar;
+  background: linear-gradient(0deg, #524284 0%, #6b5b9e 100%);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.app-sidebar__container {
+  position: fixed;
+  width: 17vw;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app-sidebar__footer {
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    padding: 10px;
+  }
+
+  a {
+    display: inline-block;
+    color: #fff;
+  }
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 20px auto;
+  border: 1px solid white;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background-image: url(../assets/avatar.jpg);
+  background-position: top center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 3px solid #524284;
+}
+
+.profile {
+  color: #fff;
+  text-align: center;
+  padding: 0 10px;
+
+  h2 {
+    font-weight: 700;
+    margin: 0;
+  }
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+}
+</style>
