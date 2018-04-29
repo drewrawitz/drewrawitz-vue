@@ -10,16 +10,17 @@
       <h3>Equipment</h3>
       <div class="workflow-group">
         <ul>
-          <li>I currently work on a <a href="#">15-inch Macbook Pro</a> running macOS High Sierra.</li>
+          <li>I currently work on a <a href="https://www.apple.com/macbook-pro/" target="_blank">15-inch Macbook Pro</a> running macOS High Sierra.</li>
           <li>I use a <a href="https://www.amazon.com/Blue-Snowball-iCE-Condenser-Microphone/dp/B014PYGTUQ/" target="_blank">Blue Snowball iCE Condenser Microphone</a> to replace the built-in Macbook microphone.</li>
-          <li>Along with the microphone, I use a <a href="#" target="_blank">Aokeo Pop Filter Mask Shield</a>.</li>
-          <li>I use a <a href="" target="_blank">Logitech HD Webcam C615</a> to replace the built-in Macbook webcam.</li>
-          <li>I use a <a href="#" target="_blank">Corsair Gaming K70 Mechanical Keyboard</a> with Cherry MX Red switches.</li>
-          <li>I use a <a href="#" target="_blank">Logitech Performance Mouse MX</a> as my wireless mouse.</li>
-          <li>I typically work on two <a href="#" target="_blank">ASUS VH236H 23-Inch</a> monitors.</li>
+          <li>Along with the microphone, I use a <a href="https://www.amazon.com/gp/product/B01N21H9WY/" target="_blank">Aokeo Pop Filter Mask Shield</a>.</li>
+          <li>I use a <a href="https://www.amazon.com/Logitech-Laptop-Webcam-Design-360-Degree/dp/B004YW7WCY/" target="_blank">Logitech HD Webcam C615</a> to replace the built-in Macbook webcam.</li>
+          <li>I use a <a href="https://www.amazon.com/gp/product/B00M5DUOBK" target="_blank">Corsair Gaming K70 Mechanical Keyboard</a> with Cherry MX Red switches.</li>
+          <li>I use a <a href="https://www.amazon.com/Logitech-Wireless-Performance-Mouse-Large/dp/B002HWRJBM" target="_blank">Logitech Performance Mouse MX</a> as my wireless mouse.</li>
+          <li>I typically work on two <a href="https://www.amazon.com/ASUS-VH236H-23-Inch-Full-HD-Monitor/dp/B002453K5G" target="_blank">ASUS VH236H 23-Inch</a> monitors.</li>
+          <li>My headphones are the <a href="https://www.amazon.com/Audio-Technica-ATH-M50x-Professional-Monitor-Headphones/dp/B00HVLUR86" target="_blank">Audio-Technica ATH-M50x</a>'s.</li>
         </ul>
         <figure>
-          <img src="../../assets/workspace.jpg" alt="" style="max-width: 200px;" />
+          <img v-img src="../../assets/workspace.jpg" alt="" style="max-width: 200px;" />
           <figcaption>My current workspace. Click to view full size.</figcaption>
         </figure>
       </div>
