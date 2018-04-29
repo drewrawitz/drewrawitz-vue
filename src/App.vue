@@ -60,7 +60,19 @@ h2 {
 }
 
 svg {
-  stroke-width: 1px;
+  width: 1em;
+  height: 1em;
+}
+
+a {
+  color: #3890dc;
+}
+
+hr {
+  height: 1px;
+  background: #ccc;
+  border: none;
+  margin: 20px 0;
 }
 
 ::-webkit-scrollbar {
@@ -80,6 +92,11 @@ svg {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   grid-column-start: 2;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.container {
   padding: 20px;
 }
 </style>

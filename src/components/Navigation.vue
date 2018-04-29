@@ -8,8 +8,14 @@
         </router-link>
       </li>
       <li>
+        <router-link to="/workflow">
+          <WorkflowIcon />
+          <span>My Workflow</span>
+        </router-link>
+      </li>
+      <li>
         <router-link to="/movies">
-          <FilmIcon />
+          <MoviesIcon />
           <span>Movies</span>
         </router-link>
       </li>
@@ -19,13 +25,15 @@
 
 <script>
 import HomeIcon from '../assets/svg/home.svg';
-import FilmIcon from '../assets/svg/film.svg';
+import MoviesIcon from '../assets/svg/film.svg';
+import WorkflowIcon from '../assets/svg/box.svg';
 
 export default {
   name: 'Navigation',
   components: {
     HomeIcon,
-    FilmIcon,
+    MoviesIcon,
+    WorkflowIcon,
   },
 };
 </script>
@@ -58,6 +66,10 @@ a {
 
   &:hover {
     color: #fff;
+  }
+
+  svg {
+    font-size: 24px;
   }
 }
 

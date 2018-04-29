@@ -16,6 +16,15 @@
           <li>
             <a href="#"><TwitterIcon /></a>
           </li>
+          <li>
+            <a href="#"><LinkedInIcon /></a>
+          </li>
+          <li>
+            <a href="#"><InstagramIcon /></a>
+          </li>
+          <li>
+            <a href="#"><GithubIcon /></a>
+          </li>
         </ul>
       </div>
     </div>
@@ -25,12 +34,18 @@
 <script>
 import Navigation from './Navigation';
 import TwitterIcon from '../assets/svg/twitter.svg';
+import LinkedInIcon from '../assets/svg/linkedin.svg';
+import InstagramIcon from '../assets/svg/instagram.svg';
+import GithubIcon from '../assets/svg/github.svg';
 
 export default {
   name: 'Sidebar',
   components: {
     Navigation,
     TwitterIcon,
+    LinkedInIcon,
+    InstagramIcon,
+    GithubIcon,
   },
 };
 </script>
@@ -54,17 +69,23 @@ export default {
 
 .app-sidebar__footer {
   ul {
-    padding: 0;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   li {
     list-style: none;
-    padding: 10px;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
   }
 
   a {
     display: inline-block;
-    color: #fff;
+    color: #d5c7ff;
   }
 }
 
