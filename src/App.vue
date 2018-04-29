@@ -43,7 +43,6 @@ body {
   overflow: auto;
   background: #fff;
   flex: 1;
-  border-radius: 10px;
   margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -66,6 +65,11 @@ svg {
 
 a {
   color: #3890dc;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #8475b7;
+  }
 }
 
 hr {
@@ -89,8 +93,6 @@ hr {
 .app-content {
   grid-area: content;
   background-color: #f5f5f5;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
   grid-column-start: 2;
   font-size: 18px;
   line-height: 1.5;

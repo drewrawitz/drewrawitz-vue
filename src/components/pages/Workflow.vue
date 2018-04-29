@@ -28,22 +28,27 @@
 
       <h3>Development</h3>
       <ul>
-        <li>I use <a href="#">Atom</a> as my Text Editor, with <a href="#">Vim mode</a> installed.</li>
-        <li>My terminal of choice is <a href="#">iTerm2</a>.</li>
-        <li>I use <a href="#">zsh</a> as my default shell, and I recently switched to <a href="#">Prezto</a> as my zsh framework, from <a href="#">oh-my-zsh</a>.</li>
+        <li>I use <a href="https://atom.io/" target="_blank">Atom</a> as my Text Editor, with <a href="https://atom.io/packages/vim-mode-plus" target="_blank">Vim mode</a> installed.</li>
+        <li>My terminal of choice is <a href="https://www.iterm2.com/" target="_blank">iTerm2</a>.</li>
+        <li>I use <a href="http://www.zsh.org/" target="_blank">zsh</a> as my default shell, and I recently switched to <a href="https://github.com/sorin-ionescu/prezto" target="_blank">Prezto</a> as my zsh framework, from <a href="http://ohmyz.sh/" target="_blank">oh-my-zsh</a>.</li>
         <li>I use the <a href="https://github.com/IBM/plex" target="_blank">IBM Plex Mono</a> font for my editor and terminal.</li>
+        <li>I use <a href="https://github.com/tmux/tmux" target="_blank">tmux</a> as a "terminal multiplexer".</li>
+        <li>For testing API endpoints, I'm a big fan of <a href="https://www.getpostman.com/" target="_blank">Postman</a>.</li>
       </ul>
-      <div class="workflow-logos">
-        <img src="../../assets/logos/atom.png" alt="Atom" />
-        <img src="../../assets/logos/iterm2.png" alt="iTerm2" />
-        <img src="../../assets/logos/tmux.png" alt="Tmux" />
-      </div>
 
       <hr />
 
       <h3>Desktop Apps</h3>
       <ul>
-        <li>I currently work on a <a href="#">15-inch Macbook Pro</a> running macOS High Sierra.</li>
+        <li>For my spotlight replacement, I'm a huge fan of <a href="https://www.alfredapp.com/" target="_blank">Alfred</a> with the Powerpack.</li>
+        <li>I use <a href="http://mizage.com/divvy/" target="_blank">Divvy</a> as my window management tool.</li>
+        <li>To clean up my menu bar, I use <a href="https://www.macbartender.com/" target="_blank">Bartender</a>.</li>
+        <li>For my Calendar, I use <a href="https://flexibits.com/fantastical" target="_blank">Fantastical</a>.</li>
+        <li>My to-do app of choice is <a href="https://en.todoist.com/" target="_blank">Todoist</a>.</li>
+        <li>I use <a href="https://sparkmailapp.com/" target="_blank">Spark</a> for my email client.</li>
+        <li>I'm a big fan of <a href="https://evernote.com/" target="_blank">Evernote</a> for note-taking.</li>
+        <li>Lately, the designers I've been working with have been using <a href="https://www.sketchapp.com/" target="_blank">Sketch</a> to design in.</li>
+        <li>To protect my eyes, I use <a href="https://justgetflux.com/" target="_blank">f.lux</a>.</li>
       </ul>
     </div>
   </div>
@@ -65,12 +70,15 @@ export default {
 
   h1 {
     position: relative;
+    font-weight: 700;
     margin: 0;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+    outline: 1px solid rgba(255, 255, 255, 0.25);
+    outline-offset: -8px;
   }
 }
 
@@ -80,23 +88,11 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .page-hero--workflow {
   background-image: url(../../assets/bg_workflow.jpg);
-}
-
-.workflow-logos {
-  display: flex;
-
-  > *:not(:last-child) {
-    margin-right: 15px;
-  }
-
-  img {
-    max-height: 25px;
-  }
 }
 
 .workflow-group {
