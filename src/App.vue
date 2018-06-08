@@ -39,7 +39,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 1350px;
-  height: 700px;
+  height: 80vh;
   overflow: auto;
   background: #fff;
   flex: 1;
@@ -96,6 +96,7 @@ hr {
   grid-column-start: 2;
   font-size: 18px;
   line-height: 1.5;
+  padding: 10px;
 }
 
 .container {

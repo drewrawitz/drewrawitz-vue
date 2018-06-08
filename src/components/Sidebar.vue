@@ -58,7 +58,7 @@ export default {
 .app-sidebar__container {
   position: fixed;
   width: 17vw;
-  height: 700px;
+  height: 80vh;
   background: linear-gradient(0deg, #524284 0%, #6b5b9e 100%);
   display: flex;
   flex-direction: column;

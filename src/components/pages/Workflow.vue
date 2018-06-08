@@ -2,7 +2,9 @@
   <div>
     <section class="page-hero page-hero--workflow">
       <div class="page-hero__overlay"></div>
-      <h1>My Workflow</h1>
+      <h1>
+        <span>My Workflow</span>
+      </h1>
     </section>
     <div class="container">
       <p>My development workflow is something I've been constantly working on over the years, and it's always evolving as I discover new tips, tools, methods or applications. I'll list out everything that is typically involved in my everyday workflow, such as my desktop equipment, macOS applications, development tools, etc.</p>
@@ -89,7 +91,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.65);
 }
 
 .page-hero--workflow {
