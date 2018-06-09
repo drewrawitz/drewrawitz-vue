@@ -12,7 +12,7 @@
             <div class="project" v-for="plugin in plugins.wordpress">
               <h3 class="project__heading"><a :href="plugin.links.wordpress" target="_blank">{{ plugin.name }}</a></h3>
               <p>{{ plugin.description }}</p>
-              <div class="project__media">
+              <div class="project__media" v-if="plugin.media">
                 <figure v-for="media in plugin.media">
                   <img v-img :src="media.src" :alt="media.caption" style="max-width: 200px;" />
                   <figcaption>{{ media.caption }}</figcaption>
@@ -41,6 +41,12 @@
             <div class="project" v-for="plugin in plugins.jquery">
               <h3 class="project__heading"><a :href="plugin.links.demo" target="_blank">{{ plugin.name }}</a></h3>
               <p>{{ plugin.description }}</p>
+              <div class="project__media" v-if="plugin.media">
+                <figure v-for="media in plugin.media">
+                  <img v-img :src="media.src" :alt="media.caption" style="max-width: 200px;" />
+                  <figcaption>{{ media.caption }}</figcaption>
+                </figure>
+              </div>
               <div class="project__links">
                 <a :href="plugin.links.github" class="project__source" v-if="plugin.links.github">
                   <GithubIcon />
@@ -81,12 +87,12 @@ export default {
             },
             media: [
               {
-                src: require("../../assets/featured-image-notes1.png"),
-                caption: "Plugin settings screen in the admin"
+                src: require("../../assets/plugins/featured-image-notes1.png"),
+                caption: "Plugin settings screen in the admin",
               },
               {
-                src: require("../../assets/featured-image-notes2.png"),
-                caption: "Featured Image Notes in action on a post"
+                src: require("../../assets/plugins/featured-image-notes2.png"),
+                caption: "Featured Image Notes in action on a post",
               },
             ],
           },
@@ -99,6 +105,12 @@ export default {
               github: "https://github.com/drewrawitz/jquery-fixed-header",
               demo: "http://drewrawitz.github.io/demo/jquery-fixed-header/",
             },
+            media: [
+              {
+                src: require("../../assets/plugins/jquery-fixed-header1.jpg"),
+                caption: "Demo page",
+              },
+            ],
           },
           {
             name: "jQuery Floating Form Label",
@@ -107,6 +119,16 @@ export default {
               github: "https://github.com/drewrawitz/jQuery-Floating-Form-Label",
               demo: "http://drewrawitz.github.io/demo/jquery-floating-form-label/",
             },
+            media: [
+              {
+                src: require("../../assets/plugins/floating-form-labels1.jpg"),
+                caption: "Demo page",
+              },
+              {
+                src: require("../../assets/plugins/floating-form-labels2.jpg"),
+                caption: "Floating labels",
+              },
+            ],
           },
         ],
       },
