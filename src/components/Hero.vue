@@ -18,7 +18,7 @@ export default {
 
         return image;
       } catch (e) {
-        return 'nope';
+        console.log('error: ' + e);
       }
     },
   },
@@ -54,9 +54,5 @@ export default {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.65);
-}
-
-.page-hero--workflow {
-  background-image: url(../assets/bg_workflow.jpg);
 }
 </style>
