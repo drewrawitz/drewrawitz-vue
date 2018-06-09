@@ -1,11 +1,6 @@
 <template>
   <div>
-    <section class="page-hero page-hero--workflow">
-      <div class="page-hero__overlay"></div>
-      <h1>
-        <span>My Workflow</span>
-      </h1>
-    </section>
+    <Hero heading="My Workflow" bg="bg_workflow.jpg" />
     <div class="container">
       <p>My development workflow is something I've been constantly working on over the years, and it's always evolving as I discover new tips, tools, methods or applications. I'll list out everything that is typically involved in my everyday workflow, such as my desktop equipment, macOS applications, development tools, etc.</p>
 
@@ -22,7 +17,7 @@
           <li>My headphones are the <a href="https://www.amazon.com/Audio-Technica-ATH-M50x-Professional-Monitor-Headphones/dp/B00HVLUR86" target="_blank">Audio-Technica ATH-M50x</a>'s.</li>
         </ul>
         <figure>
-          <img v-img src="../../assets/workspace.jpg" alt="" style="max-width: 200px;" />
+          <img v-img src="../../assets/workspace.jpg" alt="Workspace" style="max-width: 200px;" />
           <figcaption>My current workspace. Click to view full size.</figcaption>
         </figure>
       </div>
@@ -58,70 +53,22 @@
 </template>
 
 <script>
+import Hero from '../Hero';
+
 export default {
   name: 'Workflow',
+  components: {
+    Hero,
+  },
 };
 </script>
 
 <style scoped>
-.page-hero {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 300px;
-
-  h1 {
-    position: relative;
-    font-weight: 700;
-    margin: 0;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    outline: 1px solid rgba(255, 255, 255, 0.25);
-    outline-offset: -8px;
-  }
-}
-
-.page-hero__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.65);
-}
-
-.page-hero--workflow {
-  background-image: url(../../assets/bg_workflow.jpg);
-}
-
 .workflow-group {
   display: flex;
 
   ul {
     flex: 1;
-  }
-
-  figure {
-    align-self: flex-start;
-    text-align: center;
-
-    img {
-      outline: 2px solid #b0a2de;
-      outline-offset: 2px;
-    }
-  }
-
-  figcaption {
-    font-size: 12px;
-    line-height: 1.3;
-    color: #545454;
-    max-width: 80%;
-    margin: auto;
-    margin-top: 10px;
   }
 }
 </style>

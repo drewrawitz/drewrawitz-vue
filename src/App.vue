@@ -102,4 +102,23 @@ hr {
 .container {
   padding: 20px;
 }
+
+figure {
+  align-self: flex-start;
+  text-align: center;
+
+  img {
+    outline: 2px solid #b0a2de;
+    outline-offset: 2px;
+  }
+}
+
+figcaption {
+  font-size: 12px;
+  line-height: 1.3;
+  color: #545454;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
 </style>

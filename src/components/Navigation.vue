@@ -20,6 +20,12 @@
         </router-link>
       </li>
       <li>
+        <router-link to="/plugins">
+          <BookIcon />
+          <span>Plugins</span>
+        </router-link>
+      </li>
+      <li>
         <router-link to="/movies">
           <MoviesIcon />
           <span>Movies</span>
@@ -34,6 +40,7 @@ import HomeIcon from '../assets/svg/home.svg';
 import MoviesIcon from '../assets/svg/film.svg';
 import WorkflowIcon from '../assets/svg/box.svg';
 import TechnologyIcon from '../assets/svg/code.svg';
+import BookIcon from '../assets/svg/book-open.svg';
 
 export default {
   name: 'Navigation',
@@ -42,6 +49,7 @@ export default {
     MoviesIcon,
     WorkflowIcon,
     TechnologyIcon,
+    BookIcon,
   },
 };
 </script>
