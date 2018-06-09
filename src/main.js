@@ -4,7 +4,6 @@ import 'normalize.css';
 import Vue from 'vue';
 import VueImg from 'v-img/dist/v-img';
 import App from './App';
-import store from './store';
 import router from './router';
 
 Vue.config.productionTip = false;
@@ -15,7 +14,6 @@ Vue.use(VueImg);
 new Vue({
   el: '#app',
   router,
-  store,
   components: { App },
   template: '<App/>',
 });

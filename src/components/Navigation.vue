@@ -26,9 +26,9 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/movies">
-          <MoviesIcon />
-          <span>Movies</span>
+        <router-link to="/contact">
+          <MailIcon />
+          <span>Contact</span>
         </router-link>
       </li>
     </ul>
@@ -37,19 +37,19 @@
 
 <script>
 import HomeIcon from '../assets/svg/home.svg';
-import MoviesIcon from '../assets/svg/film.svg';
 import WorkflowIcon from '../assets/svg/box.svg';
 import TechnologyIcon from '../assets/svg/code.svg';
 import BookIcon from '../assets/svg/book-open.svg';
+import MailIcon from '../assets/svg/mail.svg';
 
 export default {
   name: 'Navigation',
   components: {
     HomeIcon,
-    MoviesIcon,
     WorkflowIcon,
     TechnologyIcon,
     BookIcon,
+    MailIcon,
   },
 };
 </script>

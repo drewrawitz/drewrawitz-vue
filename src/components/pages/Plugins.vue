@@ -123,16 +123,6 @@ export default {
 </script>
 
 <style scoped>
-  .heading-icon {
-    display: flex;
-    align-items: center;
-    line-height: 1;
-
-    > *:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
-
   .project {
     a {
       text-decoration: none;

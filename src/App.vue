@@ -121,4 +121,15 @@ figcaption {
   margin: auto;
   margin-top: 10px;
 }
+
+.heading-icon {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+
+  > *:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
 </style>

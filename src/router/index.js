@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import Home from '@/components/Home';
 import Workflow from '@/components/pages/Workflow';
 import Plugins from '@/components/pages/Plugins';
-import MoviesList from '@/components/MoviesList';
+import Contact from '@/components/pages/Contact';
 
 Vue.use(Router);
 
@@ -25,9 +25,9 @@ export default new Router({
       component: Plugins,
     },
     {
-      path: '/movies',
-      name: 'MoviesList',
-      component: MoviesList,
+      path: '/contact',
+      name: 'Contact',
+      component: Contact,
     },
   ],
 });
