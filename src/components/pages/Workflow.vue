@@ -5,10 +5,7 @@
       <p class="intro">My development workflow is something I've been constantly working on over the years, and it's always evolving as I discover new tips, tools, methods or applications. I'll list out everything that is typically involved in my everyday workflow, such as my desktop equipment, macOS applications, development tools, etc.</p>
 
       <div class="workflow-group">
-        <h2 class="heading-icon">
-          <AppleIcon />
-          <span>Equipment</span>
-        </h2>
+        <h2>Equipment</h2>
         <div class="workflow-group__list">
           <ul>
             <li>I currently work on a <a href="https://www.apple.com/macbook-pro/" target="_blank">15-inch Macbook Pro</a> running macOS High Sierra.</li>
@@ -28,10 +25,7 @@
       </div>
 
       <div class="workflow-group">
-        <h2 class="heading-icon">
-          <CodeIcon />
-          <span>Development</span>
-        </h2>
+        <h2>Development</h2>
         <ul>
           <li>I use <a href="https://atom.io/" target="_blank">Atom</a> as my Text Editor, with <a href="https://atom.io/packages/vim-mode-plus" target="_blank">Vim mode</a> installed.</li>
           <li>My terminal of choice is <a href="https://www.iterm2.com/" target="_blank">iTerm2</a>.</li>
@@ -43,10 +37,7 @@
       </div>
 
       <div class="workflow-group">
-        <h2 class="heading-icon">
-          <DisplayIcon />
-          <span>Desktop Apps</span>
-        </h2>
+        <h2>Desktop Apps</h2>
         <ul>
           <li>For my spotlight replacement, I'm a huge fan of <a href="https://www.alfredapp.com/" target="_blank">Alfred</a> with the Powerpack.</li>
           <li>I use <a href="http://mizage.com/divvy/" target="_blank">Divvy</a> as my window management tool.</li>
@@ -90,6 +81,10 @@ export default {
     margin-bottom: 30px;
     padding-bottom: 30px;
     border-bottom: 1px dashed #ccc;
+  }
+
+  svg {
+    font-size: 80%;
   }
 
   ul {

@@ -4,7 +4,7 @@
     <div class="container">
       <div class="plugins-wrapper">
         <div class="plugin">
-          <h2 class="heading-icon">
+          <h2 class="h-text-icon">
             <WordpressIcon />
             <span>Wordpress</span>
           </h2>
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="plugin">
-          <h2 class="heading-icon">
+          <h2 class="h-text-icon">
             <jQueryIcon />
             <span>jQuery</span>
           </h2>

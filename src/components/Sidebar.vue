@@ -63,6 +63,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: auto;
 }
 
 .app-sidebar__footer {
@@ -100,8 +101,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% - 6px);
-  height: calc(100% - 6px);
+  width: 100%;
+  height: 100%;
   background-image: url(../assets/avatar.jpg);
   background-position: top center;
   background-size: cover;

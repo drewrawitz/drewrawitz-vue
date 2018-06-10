@@ -34,8 +34,8 @@ export default {
   height: 300px;
 
   h1 {
+    font-size: 50px;
     position: relative;
-    font-weight: 700;
     margin: 0;
     color: #fff;
     display: flex;

@@ -26,6 +26,19 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i,800');
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai:400,700,900');
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   background: linear-gradient(90deg, #d5c7ff 0%, #7b6bad 100%);
   height: 100vh;
@@ -35,7 +48,7 @@ body {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 1350px;
@@ -47,15 +60,18 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.app-content {
+  h1,
+  h2 {
+    font-family: 'Arima Madurai', cursive;
+    font-weight: 700;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
-}
-
-h1,
-h2 {
-  font-weight: normal;
 }
 
 svg {
@@ -122,7 +138,7 @@ figcaption {
   margin-top: 10px;
 }
 
-.heading-icon {
+.h-text-icon {
   display: flex;
   align-items: center;
   line-height: 1;
@@ -131,5 +147,7 @@ figcaption {
     margin-right: 10px;
   }
 }
+
+.h-fw800 { font-weight: 800 !important; }
 
 </style>
