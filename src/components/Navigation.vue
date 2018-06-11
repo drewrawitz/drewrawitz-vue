@@ -8,6 +8,12 @@
         </router-link>
       </li>
       <li>
+        <router-link to="/about">
+          <UserIcon />
+          <span>About</span>
+        </router-link>
+      </li>
+      <li>
         <router-link to="/workflow">
           <WorkflowIcon />
           <span>My Workflow</span>
@@ -41,6 +47,7 @@ import WorkflowIcon from '../assets/svg/box.svg';
 import TechnologyIcon from '../assets/svg/code.svg';
 import BookIcon from '../assets/svg/book-open.svg';
 import MailIcon from '../assets/svg/mail.svg';
+import UserIcon from '../assets/svg/user.svg';
 
 export default {
   name: 'Navigation',
@@ -50,6 +57,7 @@ export default {
     TechnologyIcon,
     BookIcon,
     MailIcon,
+    UserIcon,
   },
 };
 </script>

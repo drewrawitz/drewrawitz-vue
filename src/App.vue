@@ -65,6 +65,11 @@ body {
   h2 {
     font-family: 'Arima Madurai', cursive;
     font-weight: 700;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 35px;
   }
 }
 

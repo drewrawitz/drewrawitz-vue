@@ -5,17 +5,19 @@
       <h1 class="homepage-heading">Hello!</h1>
       <p class="homepage-intro">My name is <span class="h-fw800">Drew Rawitz</span>, and I'm a Senior Front-end Developer working remotely out of Raleigh, North Carolina!</p>
       <div class="homepage-cta">
-        <a href="#" class="h-text-icon">
-          <span><UserIcon /></span>
-          <span>Learn more about me</span>
-        </a>
+        <div class="h-text-icon">
+          <router-link to="/about">
+            <span><UserIcon /></span>
+            <span>Learn more about me</span>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import UserIcon from '../assets/svg/user.svg';
+import UserIcon from '../../assets/svg/user.svg';
 
 export default {
   name: 'Home',
@@ -76,7 +78,7 @@ export default {
   left: 0;
   width: 100%;
   z-index: 10;
-  background-image: url(../assets/bg_homepage.jpg);
+  background-image: url(../../assets/bg_homepage.jpg);
   background-size: cover;
   background-position: center;
   height: 100%;

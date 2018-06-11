@@ -12,7 +12,7 @@
 import Hero from '../Hero';
 
 export default {
-  name: 'Plugins',
+  name: 'Contact',
   components: {
     Hero,
   },
