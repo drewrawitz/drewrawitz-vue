@@ -24,6 +24,7 @@
 
 <script>
 import VueSlideUpDown from 'vue-slide-up-down';
+import Color from 'color';
 import Sidebar from './components/Sidebar';
 import ColorPickerIcon from './assets/svg/eyedropper.svg';
 
@@ -35,12 +36,45 @@ export default {
       showColorPicker: false,
     };
   },
+  created() {
+    this.changePrimaryColor('blue');
+  },
   methods: {
+    hexToRGB(str) {
+      const RGB_HEX = /^#?(?:([\da-f]{3})[\da-f]?|([\da-f]{6})(?:[\da-f]{2})?)$/i;
+      const [, short, long] = String(str).match(RGB_HEX) || [];
+      let data;
+
+      if (long) {
+        const value = Number.parseInt(long, 16);
+        data = [value >> 16, value >> 8 & 0xFF, value & 0xFF];
+      } else if (short) {
+        data = Array.from(short, s => Number.parseInt(s, 16)).map(n => (n << 4) | n);
+      }
+
+      return data;
+    },
     toggleColorPicker() {
       this.showColorPicker = !this.showColorPicker;
     },
     changePrimaryColor(color) {
       document.documentElement.style.setProperty('--primary', `var(--${color})`);
+
+      const primary = getComputedStyle(document.body).getPropertyValue('--primary');
+      const primaryHex = primary.substr(1);
+      const rgb = this.hexToRGB(primaryHex);
+      const colorObj = Color.rgb(rgb);
+      const navColor = colorObj.mix(Color('white'), 0.65);
+      const linkColor = colorObj.lighten(0.1);
+      const linkHoverColor = colorObj.mix(Color('white'), 0.25);
+      const imageBorderColor = colorObj.lighten(0.3);
+      const darkBorderColor = colorObj.darken(0.3);
+
+      document.documentElement.style.setProperty('--primary-nav-color', `${navColor}`);
+      document.documentElement.style.setProperty('--primary-link', `${linkColor}`);
+      document.documentElement.style.setProperty('--primary-link-hover', `${linkHoverColor}`);
+      document.documentElement.style.setProperty('--primary-dark-border', `${darkBorderColor}`);
+      document.documentElement.style.setProperty('--primary-image-border', `${imageBorderColor}`);
     },
   },
   components: {
@@ -66,7 +100,6 @@ html {
 }
 
 body {
-  /* background: linear-gradient(90deg, var(--primary-light) 0%, var(--primary) 100%); */
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1)) var(--primary);
   height: 100vh;
   display: flex;
@@ -125,11 +158,11 @@ svg {
 }
 
 a {
-  color: #3890dc;
+  color: var(--primary-link);
   transition: color 0.3s ease-in-out;
 
   &:hover {
-    color: var(--primary-xl);
+    color: var(--primary-link-hover);
   }
 }
 
@@ -160,8 +193,7 @@ figure {
   text-align: center;
 
   img {
-    /* outline: 2px solid #b0a2de; */
-    outline: 2px solid var(--primary-xl);
+    outline: 2px solid var(--primary-image-border);
     outline-offset: 2px;
   }
 }

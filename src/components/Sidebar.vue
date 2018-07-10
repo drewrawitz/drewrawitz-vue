@@ -61,7 +61,6 @@ export default {
   min-width: 180px;
   height: calc(100vh - 40px);
   max-height: 850px;
-  /* background: linear-gradient(0deg, var(--primary-dark) 0%, var(--primary-xxl) 100%); */
   background:
     linear-gradient(
       to bottom,
@@ -93,7 +92,7 @@ export default {
 
   a {
     display: inline-block;
-    color: var(--primary-link);
+    color: var(--primary-nav-color);
   }
 }
 
@@ -116,7 +115,7 @@ export default {
   background-position: top center;
   background-size: cover;
   border-radius: 50%;
-  border: 3px solid var(--primary-xxl);
+  border: 3px solid var(--primary);
 }
 
 .profile {

@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 nav {
-  border-top: 1px solid var(--primary);
+  border-top: 1px solid var(--primary-dark-border);
 }
 
 ul {
@@ -72,7 +72,7 @@ li {
 
 a {
   text-decoration: none;
-  color: var(--primary-link);
+  color: var(--primary-nav-color);
   padding: 15px 20px;
   display: flex;
   align-items: center;
