@@ -39,7 +39,14 @@ export default {
     };
   },
   created() {
-    this.changePrimaryColor('blue');
+    // does the user have a theme set in local storage?
+    const theme = localStorage.getItem('theme');
+    if (theme) {
+      this.changePrimaryColor(theme);
+    } else {
+      // if not, let's use blue as the default
+      this.changePrimaryColor('blue');
+    }
   },
   methods: {
     hexToRGB(str) {
@@ -79,6 +86,9 @@ export default {
       document.documentElement.style.setProperty('--primary-link-hover', `${linkHoverColor}`);
       document.documentElement.style.setProperty('--primary-dark-border', `${darkBorderColor}`);
       document.documentElement.style.setProperty('--primary-image-border', `${imageBorderColor}`);
+
+      // set the new selection in local storage
+      localStorage.setItem('theme', color);
     },
   },
   components: {
