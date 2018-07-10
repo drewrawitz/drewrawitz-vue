@@ -2,7 +2,7 @@
   <aside class="app-sidebar">
     <div class="app-sidebar__container">
       <div class="app-sidebar__content">
-        <div class="logo-wrapper" v-on:click="color">
+        <div class="logo-wrapper">
           <span class="logo"></span>
         </div>
         <div class="profile">
@@ -40,12 +40,6 @@ import GithubIcon from '../assets/svg/github.svg';
 
 export default {
   name: 'Sidebar',
-  methods: {
-    color() {
-      console.log('change color');
-      document.documentElement.style.setProperty('--primary', 'red');
-    },
-  },
   components: {
     Navigation,
     TwitterIcon,

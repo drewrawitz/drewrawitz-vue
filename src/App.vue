@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <div class="color-picker" v-on:click="colorPicker">
+    <div class="color-picker">
       <div class="color-picker__swatches">
-        <div class="color-picker__swatch">
+        <div class="color-picker__swatch" v-on:click="toggleColorPicker">
           <ColorPickerIcon />
         </div>
-        <div class="color-picker__swatch-group">
-          <div class="color-picker__swatch color-picker__swatch--blue"></div>
-          <div class="color-picker__swatch color-picker__swatch--purple"></div>
-        </div>
+        <vue-slide-up-down :active="showColorPicker" :duration="300">
+          <div class="color-picker__swatch-group">
+            <div class="color-picker__swatch color-picker__swatch--blue" v-on:click="changePrimaryColor('blue')"></div>
+            <div class="color-picker__swatch color-picker__swatch--purple" v-on:click="changePrimaryColor('purple')"></div>
+          </div>
+        </vue-slide-up-down>
       </div>
     </div>
     <div class="app-wrapper">
@@ -21,6 +23,7 @@
 </template>
 
 <script>
+import VueSlideUpDown from 'vue-slide-up-down';
 import Sidebar from './components/Sidebar';
 import ColorPickerIcon from './assets/svg/eyedropper.svg';
 
@@ -29,16 +32,21 @@ export default {
   data() {
     return {
       name: 'Drew Rawitz',
+      showColorPicker: false,
     };
+  },
+  methods: {
+    toggleColorPicker() {
+      this.showColorPicker = !this.showColorPicker;
+    },
+    changePrimaryColor(color) {
+      document.documentElement.style.setProperty('--primary', `var(--${color})`);
+    },
   },
   components: {
     Sidebar,
     ColorPickerIcon,
-  },
-  methods: {
-    colorPicker() {
-      console.log('hi');
-    },
+    VueSlideUpDown,
   },
 };
 </script>
@@ -215,6 +223,7 @@ figcaption {
   display: flex;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .color-picker__swatches {
