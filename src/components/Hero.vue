@@ -1,9 +1,11 @@
 <template>
   <section class="page-hero" :style="{ 'background-image': 'url(' + this.getAssetPath(bg) + ')' }">
     <div class="page-hero__overlay"></div>
-    <h1>
-      <span v-if="heading">{{ heading }}</span>
-    </h1>
+      <h1>
+        <transition name="slide-fade" appear>
+          <span v-if="heading">{{ heading }}</span>
+        </transition>
+      </h1>
   </section>
 </template>
 
@@ -18,7 +20,7 @@ export default {
 
         return image;
       } catch (e) {
-        console.log('error: ' + e);
+        console.log(`error: ${e}`);
       }
     },
   },

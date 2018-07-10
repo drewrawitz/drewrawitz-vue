@@ -2,16 +2,20 @@
   <div class="homepage-wrapper">
     <div class="homepage-bg"></div>
     <div class="homepage-content">
-      <h1 class="homepage-heading">Hello!</h1>
-      <p class="homepage-intro">My name is <span class="h-fw800">Drew Rawitz</span>, and I'm a Senior Front-end Developer working remotely out of Raleigh, North Carolina!</p>
-      <div class="homepage-cta">
-        <div class="h-text-icon">
+      <transition name="slide-fade" appear>
+        <h1 class="homepage-heading">Hello!</h1>
+      </transition>
+      <transition name="fade" appear>
+        <p class="homepage-intro">My name is <span class="h-fw800">Drew Rawitz</span>, and I'm a Senior Front-end Developer working remotely out of Raleigh, North Carolina!</p>
+        <div class="homepage-cta">
           <router-link to="/about">
-            <span><UserIcon /></span>
-            <span>Learn more about me</span>
+            <div class="h-text-icon">
+              <span><UserIcon /></span>
+              <span>Learn more about me</span>
+            </div>
           </router-link>
         </div>
-      </div>
+      </transition>
     </div>
   </div>
 </template>

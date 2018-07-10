@@ -52,7 +52,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 1350px;
-  height: 80vh;
+  height: calc(100vh - 40px);
+  max-height: 850px;
   overflow: auto;
   background: #fff;
   flex: 1;
@@ -107,7 +108,7 @@ hr {
 .app-wrapper {
   display: grid;
   grid-template-areas: 'sidebar content';
-  grid-template-columns: 17vw auto;
+  grid-template-columns: minmax(180px, 17vw) 1fr;
   height: 100%;
 }
 
@@ -153,6 +154,27 @@ figcaption {
   }
 }
 
+.h-text-center { text-align: center; }
 .h-fw800 { font-weight: 800 !important; }
 
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(15px);
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
