@@ -7,6 +7,7 @@
         <div class="image-right">
           <figure>
             <img v-img src="../../assets/engagement.jpg" alt="Drew Rawitz" style="max-width: 200px;" />
+            <figcaption>Me and Haley right after I proposed!</figcaption>
           </figure>
         </div>
         <p>My name is <strong>Drew Rawitz</strong>, I’m a Senior Frontend Developer currently working remotely out of Raleigh, North Carolina! I've spent the last 8 years as a professional web developer where I specialize in transforming beautiful designs into full-fledged interactive web applications for various clients all around the world.</p>
@@ -43,7 +44,8 @@ export default {
 blockquote {
   background: #eaeaea;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
+  font-size: 14px;
   border: 1px dashed #bdbdbd;
   border-radius: 3px;
 }

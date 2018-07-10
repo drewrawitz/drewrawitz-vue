@@ -7,6 +7,8 @@
       </transition>
       <transition name="fade" appear>
         <p class="homepage-intro">My name is <span class="h-fw800">Drew Rawitz</span>, and I'm a Senior Front-end Developer working remotely out of Raleigh, North Carolina!</p>
+      </transition>
+      <transition name="fade" appear>
         <div class="homepage-cta">
           <router-link to="/about">
             <div class="h-text-icon">

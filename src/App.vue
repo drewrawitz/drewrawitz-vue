@@ -62,8 +62,16 @@ body {
 }
 
 .app-content {
+  grid-area: content;
+  background-color: #f5f5f5;
+  grid-column-start: 2;
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 10px;
+
   h1,
-  h2 {
+  h2,
+  h3 {
     font-family: 'Arima Madurai', cursive;
     font-weight: 700;
     line-height: 1;
@@ -71,6 +79,10 @@ body {
 
   h2 {
     font-size: 35px;
+  }
+
+  h3 {
+    font-size: 25px;
   }
 }
 
@@ -110,15 +122,6 @@ hr {
   grid-template-areas: 'sidebar content';
   grid-template-columns: minmax(180px, 17vw) 1fr;
   height: 100%;
-}
-
-.app-content {
-  grid-area: content;
-  background-color: #f5f5f5;
-  grid-column-start: 2;
-  font-size: 18px;
-  line-height: 1.5;
-  padding: 10px;
 }
 
 .container {

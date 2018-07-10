@@ -14,16 +14,16 @@
       <div class="app-sidebar__footer">
         <ul>
           <li>
-            <a href="#"><TwitterIcon /></a>
+            <a href="https://www.twitter.com/drewrawitz" target="_blank"><TwitterIcon /></a>
           </li>
           <li>
-            <a href="#"><LinkedInIcon /></a>
+            <a href="http://www.linkedin.com/pub/drew-rawitz/78/97b/2b7" target="_blank"><LinkedInIcon /></a>
           </li>
           <li>
-            <a href="#"><InstagramIcon /></a>
+            <a href="https://www.instagram.com/drewrawitz" target="_blank"><InstagramIcon /></a>
           </li>
           <li>
-            <a href="#"><GithubIcon /></a>
+            <a href="https://www.github.com/drewrawitz" target="_blank"><GithubIcon /></a>
           </li>
         </ul>
       </div>

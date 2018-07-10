@@ -20,12 +20,6 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/technology">
-          <TechnologyIcon />
-          <span>Technology</span>
-        </router-link>
-      </li>
-      <li>
         <router-link to="/plugins">
           <BookIcon />
           <span>Plugins</span>
