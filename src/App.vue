@@ -39,9 +39,11 @@ export default {
     };
   },
   created() {
-    // does the user have a theme set in local storage?
+    // does the user have a theme set in local storage, and the theme color still exists?
     const theme = localStorage.getItem('theme');
-    if (theme) {
+    const color = getComputedStyle(document.body).getPropertyValue(`--${theme}`);
+
+    if (theme && color) {
       this.changePrimaryColor(theme);
     } else {
       // if not, let's use blue as the default
