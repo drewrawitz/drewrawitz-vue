@@ -2,10 +2,9 @@
   --purple: #7b6bad;
   --blue: #185890;
   --red: #90181e;
-  --green: #096b10;
+  --green: #348420;
   --light-gray: #f5f5f5;
 
-  --primary: var(--purple);
-  --primary-link: color-mod(var(--primary) lightness(80%));
+  --primary: var(--blue);
   --background: var(--light-gray);
 }

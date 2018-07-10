@@ -68,7 +68,7 @@ export default {
   margin: 30px 0 0 0;
 
   a {
-    color: var(--primary-nav-color);
+    color: var(--primary-nav-active);
     text-decoration: none;
   }
 }

@@ -9,6 +9,8 @@
           <div class="color-picker__swatch-group">
             <div class="color-picker__swatch color-picker__swatch--blue" v-on:click="changePrimaryColor('blue')"></div>
             <div class="color-picker__swatch color-picker__swatch--purple" v-on:click="changePrimaryColor('purple')"></div>
+            <div class="color-picker__swatch color-picker__swatch--red" v-on:click="changePrimaryColor('red')"></div>
+            <div class="color-picker__swatch color-picker__swatch--green" v-on:click="changePrimaryColor('green')"></div>
           </div>
         </vue-slide-up-down>
       </div>
@@ -65,12 +67,14 @@ export default {
       const rgb = this.hexToRGB(primaryHex);
       const colorObj = Color.rgb(rgb);
       const navColor = colorObj.mix(Color('white'), 0.65);
+      const navActiveColor = colorObj.mix(Color('white'), 0.25);
       const linkColor = colorObj.lighten(0.1);
       const linkHoverColor = colorObj.mix(Color('white'), 0.25);
       const imageBorderColor = colorObj.lighten(0.3);
       const darkBorderColor = colorObj.darken(0.3);
 
       document.documentElement.style.setProperty('--primary-nav-color', `${navColor}`);
+      document.documentElement.style.setProperty('--primary-nav-active', `${navActiveColor}`);
       document.documentElement.style.setProperty('--primary-link', `${linkColor}`);
       document.documentElement.style.setProperty('--primary-link-hover', `${linkHoverColor}`);
       document.documentElement.style.setProperty('--primary-dark-border', `${darkBorderColor}`);
@@ -286,6 +290,14 @@ figcaption {
 
   &--purple {
     background-color: var(--purple);
+  }
+
+  &--red {
+    background-color: var(--red);
+  }
+
+  &--green {
+    background-color: var(--green);
   }
 }
 </style>
