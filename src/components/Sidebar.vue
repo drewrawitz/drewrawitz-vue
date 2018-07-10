@@ -67,7 +67,14 @@ export default {
   min-width: 180px;
   height: calc(100vh - 40px);
   max-height: 850px;
-  background: linear-gradient(0deg, var(--primary-dark) 0%, var(--primary-xxl) 100%);
+  /* background: linear-gradient(0deg, var(--primary-dark) 0%, var(--primary-xxl) 100%); */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.10),
+      rgba(0, 0, 0, 0.30)
+    )
+    var(--primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;

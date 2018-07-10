@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+    <div class="color-picker" v-on:click="colorPicker">
+      <div class="color-picker__swatches">
+        <div class="color-picker__swatch">
+          <ColorPickerIcon />
+        </div>
+        <div class="color-picker__swatch-group">
+          <div class="color-picker__swatch color-picker__swatch--blue"></div>
+          <div class="color-picker__swatch color-picker__swatch--purple"></div>
+        </div>
+      </div>
+    </div>
     <div class="app-wrapper">
       <Sidebar />
       <main class="app-content">
@@ -11,6 +22,7 @@
 
 <script>
 import Sidebar from './components/Sidebar';
+import ColorPickerIcon from './assets/svg/eyedropper.svg';
 
 export default {
   name: 'app',
@@ -21,6 +33,12 @@ export default {
   },
   components: {
     Sidebar,
+    ColorPickerIcon,
+  },
+  methods: {
+    colorPicker() {
+      console.log('hi');
+    },
   },
 };
 </script>
@@ -40,7 +58,8 @@ html {
 }
 
 body {
-  background: linear-gradient(90deg, var(--primary-light) 0%, var(--primary) 100%);
+  /* background: linear-gradient(90deg, var(--primary-light) 0%, var(--primary) 100%); */
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1)) var(--primary);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -158,16 +177,20 @@ figcaption {
   }
 }
 
-.h-text-center { text-align: center; }
-.h-fw800 { font-weight: 800 !important; }
+.h-text-center {
+  text-align: center;
+}
+.h-fw800 {
+  font-weight: 800 !important;
+}
 
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 .slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
@@ -175,10 +198,53 @@ figcaption {
   opacity: 0;
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 1s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+</style>
+<style scoped>
+.color-picker {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.color-picker__swatches {
+  background-color: var(--background);
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.color-picker__swatch-group {
+  margin-top: 5px;
+
+  > *:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.color-picker__swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--blue {
+    background-color: var(--blue);
+  }
+
+  &--purple {
+    background-color: var(--purple);
+  }
 }
 </style>
