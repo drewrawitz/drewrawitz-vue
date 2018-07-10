@@ -1,0 +1,17 @@
+:root {
+  --purple: #7b6bad;
+  --blue: #185890;
+  --red: #90181e;
+  --green: #096b10;
+  --light-gray: #f5f5f5;
+
+  --primary: var(--purple);
+  --primary-light: color-mod(var(--primary) saturation(63%) lightness(81%));
+  --primary-xl: color-mod(var(--primary) lightness(70%));
+  --primary-xxl: color-mod(var(--primary-dark) lightness(50%));
+  --primary-xxxl: color-mod(var(--primary-dark) lightness(50%) shade(15%));
+  --primary-dark: color-mod(var(--primary) saturation(36%) shade(20%));
+  --primary-xd: color-mod(var(--primary-dark) shade(35%));
+  --primary-link: color-mod(var(--primary-dark) lightness(80%));
+  --background: var(--light-gray);
+}

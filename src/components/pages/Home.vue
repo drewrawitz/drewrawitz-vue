@@ -68,7 +68,7 @@ export default {
   margin: 30px 0 0 0;
 
   a {
-    color: #a496d3;
+    color: var(--primary-light);
     text-decoration: none;
   }
 }

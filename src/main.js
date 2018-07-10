@@ -5,6 +5,7 @@ import Vue from 'vue';
 import VueImg from 'v-img/dist/v-img';
 import App from './App';
 import router from './router';
+import './styles/vars.css';
 
 Vue.config.productionTip = false;
 

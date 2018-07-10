@@ -2,7 +2,7 @@
   <aside class="app-sidebar">
     <div class="app-sidebar__container">
       <div class="app-sidebar__content">
-        <div class="logo-wrapper">
+        <div class="logo-wrapper" v-on:click="color">
           <span class="logo"></span>
         </div>
         <div class="profile">
@@ -40,6 +40,12 @@ import GithubIcon from '../assets/svg/github.svg';
 
 export default {
   name: 'Sidebar',
+  methods: {
+    color() {
+      console.log('change color');
+      document.documentElement.style.setProperty('--primary', 'red');
+    },
+  },
   components: {
     Navigation,
     TwitterIcon,
@@ -61,7 +67,7 @@ export default {
   min-width: 180px;
   height: calc(100vh - 40px);
   max-height: 850px;
-  background: linear-gradient(0deg, #524284 0%, #6b5b9e 100%);
+  background: linear-gradient(0deg, var(--primary-dark) 0%, var(--primary-xxl) 100%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -86,7 +92,7 @@ export default {
 
   a {
     display: inline-block;
-    color: #d5c7ff;
+    color: var(--primary-link);
   }
 }
 
@@ -109,7 +115,7 @@ export default {
   background-position: top center;
   background-size: cover;
   border-radius: 50%;
-  border: 3px solid #524284;
+  border: 3px solid var(--primary-xxl);
 }
 
 .profile {

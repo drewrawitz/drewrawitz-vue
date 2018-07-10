@@ -40,7 +40,7 @@ html {
 }
 
 body {
-  background: linear-gradient(90deg, #d5c7ff 0%, #7b6bad 100%);
+  background: linear-gradient(90deg, var(--primary-light) 0%, var(--primary) 100%);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -63,7 +63,7 @@ body {
 
 .app-content {
   grid-area: content;
-  background-color: #f5f5f5;
+  background-color: var(--background);
   grid-column-start: 2;
   font-size: 16px;
   line-height: 1.8;
@@ -102,7 +102,7 @@ a {
   transition: color 0.3s ease-in-out;
 
   &:hover {
-    color: #8475b7;
+    color: var(--primary-xl);
   }
 }
 
@@ -133,7 +133,8 @@ figure {
   text-align: center;
 
   img {
-    outline: 2px solid #b0a2de;
+    /* outline: 2px solid #b0a2de; */
+    outline: 2px solid var(--primary-xl);
     outline-offset: 2px;
   }
 }

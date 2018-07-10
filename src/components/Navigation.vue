@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 nav {
-  border-top: 1px solid #5c4d8f;
+  border-top: 1px solid var(--primary-xxxl);
 }
 
 ul {
@@ -72,7 +72,7 @@ li {
 
 a {
   text-decoration: none;
-  color: #d5c7ff;
+  color: var(--primary-link);
   padding: 15px 20px;
   display: flex;
   align-items: center;
@@ -92,7 +92,7 @@ a {
 }
 
 .router-link-exact-active {
-  background-color: #372b5d;
+  background-color: var(--primary-xd);
   border-right: 5px solid #3890dc;
   color: #fff;
 
