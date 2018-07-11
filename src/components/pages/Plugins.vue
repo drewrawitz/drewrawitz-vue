@@ -163,17 +163,15 @@ export default {
 .project__media {
   display: flex;
   justify-content: flex-start;
+  flex-flow: wrap;
   margin: 20px 0;
-  padding: 20px;
+  padding: 10px;
   background-color: #ececec;
 
   figure {
-    margin: 5px 0 0 5px;
-    align-self: stretch;
-
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
+    margin: 20px;
+    align-self: center;
+    flex: 0;
   }
 }
 

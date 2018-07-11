@@ -44,6 +44,8 @@ export default {
 <style scoped>
 .image-right {
   float: right;
+  margin-left: 30px;
+  margin-bottom: 20px;
 }
 
 blockquote {

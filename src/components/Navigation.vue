@@ -59,6 +59,10 @@ export default {
 <style scoped>
 nav {
   border-top: 1px solid var(--primary-dark-border);
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 ul {

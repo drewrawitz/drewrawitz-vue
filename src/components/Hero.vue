@@ -43,6 +43,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     height: 100%;
     outline: 1px solid rgba(255, 255, 255, 0.25);
     outline-offset: -8px;

@@ -55,12 +55,16 @@ export default {
   grid-area: sidebar;
 }
 
+.app-sidebar__content {
+  @media (max-width: 767px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+}
+
 .app-sidebar__container {
-  position: fixed;
-  width: 17vw;
-  min-width: 180px;
-  height: calc(100vh - 40px);
-  max-height: 850px;
   background:
     linear-gradient(
       to bottom,
@@ -72,9 +76,21 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   overflow: auto;
+
+  @media (min-width: 768px) {
+    position: fixed;
+    width: 17vw;
+    min-width: 200px;
+    height: calc(100vh - 40px);
+    max-height: 850px;
+  }
 }
 
 .app-sidebar__footer {
+  @media (max-width: 767px) {
+    display: none;
+  }
+
   ul {
     padding: 0 10px;
     display: flex;
@@ -103,6 +119,12 @@ export default {
   border-radius: 50%;
   margin: 20px auto;
   border: 1px solid white;
+
+  @media (max-width: 767px) {
+    margin: 0;
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .logo {
@@ -130,7 +152,11 @@ export default {
 
   p {
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      margin-bottom: 20px;
+    }
   }
 }
 </style>

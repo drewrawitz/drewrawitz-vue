@@ -200,10 +200,12 @@ hr {
 }
 
 .app-wrapper {
-  display: grid;
-  grid-template-areas: 'sidebar content';
-  grid-template-columns: minmax(180px, 17vw) 1fr;
-  height: 100%;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-areas: 'sidebar content';
+    grid-template-columns: minmax(200px, 17vw) 1fr;
+    height: 100%;
+  }
 }
 
 .container {
@@ -213,6 +215,7 @@ hr {
 figure {
   align-self: flex-start;
   text-align: center;
+  margin: 0;
 
   img {
     outline: 2px solid var(--primary-image-border);
@@ -273,7 +276,7 @@ figcaption {
   position: fixed;
   top: 5px;
   right: 5px;
-  z-index: 100;
+  z-index: 500;
   display: flex;
   align-items: center;
   flex-direction: column;
