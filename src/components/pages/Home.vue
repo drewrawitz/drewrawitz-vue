@@ -11,7 +11,7 @@
       <transition name="fade" appear>
         <div class="homepage-cta">
           <router-link to="/about">
-            <div class="h-text-icon">
+            <div class="h-text-icon" v-on:click="gaEvent('Home', 'click', 'Learn more')">
               <span><UserIcon /></span>
               <span>Learn more about me</span>
             </div>
@@ -29,6 +29,11 @@ export default {
   name: 'Home',
   components: {
     UserIcon,
+  },
+  methods: {
+    gaEvent(category, action, label) {
+      this.$ga.event(category, action, label);
+    },
   },
 };
 </script>

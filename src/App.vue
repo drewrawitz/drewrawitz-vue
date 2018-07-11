@@ -91,6 +91,12 @@ export default {
 
       // set the new selection in local storage
       localStorage.setItem('theme', color);
+
+      // send a GA event
+      this.gaEvent('Site Theme', 'change', color);
+    },
+    gaEvent(category, action, label) {
+      this.$ga.event(category, action, label);
     },
   },
   components: {
