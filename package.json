@@ -12,6 +12,7 @@
     "deploy": "npm run build; cp ./src/CNAME dist/ && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "autotrack": "^2.4.1",
     "axios": "^0.18.0",
     "normalize.css": "^8.0.0",
     "v-img": "^0.2.0",

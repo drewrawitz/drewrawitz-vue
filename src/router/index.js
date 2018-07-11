@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueAnalytics from 'vue-analytics';
 import Router from 'vue-router';
+import 'autotrack/lib/plugins/outbound-link-tracker';
 import Home from '@/components/pages/Home';
 import Workflow from '@/components/pages/Workflow';
 import Plugins from '@/components/pages/Plugins';
@@ -42,6 +43,9 @@ const router = new Router({
 Vue.use(VueAnalytics, {
   id: 'UA-34472559-1',
   router,
+  beforeFirstHit() {
+    Vue.$ga.require('outboundLinkTracker');
+  },
 });
 
 export default router;
