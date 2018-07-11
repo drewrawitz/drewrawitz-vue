@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import VueAnalytics from 'vue-analytics';
 import Router from 'vue-router';
 import Home from '@/components/pages/Home';
 import Workflow from '@/components/pages/Workflow';
@@ -8,7 +9,7 @@ import About from '@/components/pages/About';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -37,3 +38,10 @@ export default new Router({
     },
   ],
 });
+
+Vue.use(VueAnalytics, {
+  id: 'UA-34472559-1',
+  router,
+});
+
+export default router;
