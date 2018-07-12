@@ -123,10 +123,13 @@ html {
 
 body {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1)) var(--primary);
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    height: 100vh;
+  }
 }
 
 #app {
@@ -134,13 +137,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 1350px;
-  height: calc(100vh - 40px);
   max-height: 850px;
   overflow: auto;
   background: #fff;
   flex: 1;
   margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    height: calc(100vh - 40px);
+  }
+
+  @media (max-width: 500px) {
+      margin: 10px;
+  }
 }
 
 .app-content {
@@ -150,6 +160,10 @@ body {
   font-size: 16px;
   line-height: 1.8;
   padding: 10px;
+
+  @media (max-width: 500px) {
+    padding: 3px;
+  }
 
   h1,
   h2,
@@ -210,6 +224,10 @@ hr {
 
 .container {
   padding: 20px;
+
+  @media (max-width: 500px) {
+    padding: 15px;
+  }
 }
 
 figure {
@@ -281,6 +299,10 @@ figcaption {
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 .color-picker__swatches {
