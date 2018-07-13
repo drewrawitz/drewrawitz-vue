@@ -2,16 +2,20 @@
   <aside class="app-sidebar">
     <div class="app-sidebar__container">
       <div class="app-sidebar__content">
-        <div class="logo-wrapper">
-          <span class="logo"></span>
+        <div class="app-sidebar__header" v-on:click="toggleMobileMenu">
+          <div class="logo-wrapper">
+            <span class="logo"></span>
+          </div>
+          <div class="profile">
+            <h2>Drew Rawitz</h2>
+            <p>Front-end Developer</p>
+          </div>
         </div>
-        <div class="profile">
-          <h2>Drew Rawitz</h2>
-          <p>Front-end Developer</p>
-        </div>
-        <Navigation />
+        <vue-slide-up-down :active="windowWidth >= 768 || mobileMenuOpen" :duration="300">
+          <Navigation />
+        </vue-slide-up-down>
       </div>
-      <div class="app-sidebar__footer">
+      <div class="app-sidebar__footer" v-if="windowWidth >= 768 || mobileMenuOpen">
         <ul>
           <li>
             <a href="https://www.twitter.com/drewrawitz" target="_blank"><TwitterIcon /></a>
@@ -32,6 +36,7 @@
 </template>
 
 <script>
+import VueSlideUpDown from 'vue-slide-up-down';
 import Navigation from './Navigation';
 import TwitterIcon from '../assets/svg/twitter.svg';
 import LinkedInIcon from '../assets/svg/linkedin.svg';
@@ -40,12 +45,51 @@ import GithubIcon from '../assets/svg/github.svg';
 
 export default {
   name: 'Sidebar',
+  data() {
+    return {
+      mobileMenuOpen: false,
+      windowWidth: 0,
+    };
+  },
   components: {
     Navigation,
     TwitterIcon,
     LinkedInIcon,
     InstagramIcon,
     GithubIcon,
+    VueSlideUpDown,
+  },
+  watch: {
+    $route() {
+      // on route change, close the mobile menu
+      this.mobileMenuOpen = false;
+
+      // scroll to the top of the page
+      document.getElementById('app').scrollTo(0, 0);
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.getWindowWidth);
+
+      // Init
+      this.getWindowWidth();
+    });
+  },
+  methods: {
+    getWindowWidth() {
+      this.windowWidth = document.documentElement.clientWidth;
+    },
+    toggleMobileMenu() {
+      const w = window.innerWidth;
+
+      if (w <= 768) {
+        this.mobileMenuOpen = !this.mobileMenuOpen;
+      }
+    },
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.getWindowWidth);
   },
 };
 </script>
@@ -53,9 +97,24 @@ export default {
 <style scoped>
 .app-sidebar {
   grid-area: sidebar;
+
+  @media (max-width: 767px) {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    width: calc(100% - 40px);
+    margin: auto;
+  }
+
+  @media (max-width: 500px) {
+    width: calc(100% - 20px);
+    top: 10px;
+  }
 }
 
-.app-sidebar__content {
+.app-sidebar__header {
   @media (max-width: 767px) {
     display: flex;
     align-items: center;
@@ -87,10 +146,6 @@ export default {
 }
 
 .app-sidebar__footer {
-  @media (max-width: 767px) {
-    display: none;
-  }
-
   ul {
     padding: 0 10px;
     display: flex;

@@ -137,19 +137,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 1350px;
-  max-height: 850px;
-  overflow: auto;
   background: #fff;
   flex: 1;
   margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 40px);
+  overflow: auto;
 
   @media (min-width: 768px) {
-    height: calc(100vh - 40px);
+    max-height: 850px;
   }
 
   @media (max-width: 500px) {
-      margin: 10px;
+    margin: 10px;
   }
 }
 
@@ -214,11 +214,16 @@ hr {
 }
 
 .app-wrapper {
+  height: 100%;
+
+  @media (max-width: 767px) {
+    padding-top: 100px;
+  }
+
   @media (min-width: 768px) {
     display: grid;
     grid-template-areas: 'sidebar content';
     grid-template-columns: minmax(200px, 17vw) 1fr;
-    height: 100%;
   }
 }
 
