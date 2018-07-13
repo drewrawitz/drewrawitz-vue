@@ -4,6 +4,7 @@ import 'normalize.css';
 import Vue from 'vue';
 import VueImg from 'v-img/dist/v-img';
 import App from './App';
+import store from './store';
 import router from './router';
 import './styles/vars.css';
 
@@ -15,6 +16,7 @@ Vue.use(VueImg);
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>',
 });

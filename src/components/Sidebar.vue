@@ -2,7 +2,7 @@
   <aside class="app-sidebar">
     <div class="app-sidebar__container">
       <div class="app-sidebar__content">
-        <div class="app-sidebar__header" v-on:click="toggleMobileMenu">
+        <div class="app-sidebar__header" v-on:click="setMobileMenuState">
           <div class="logo-wrapper">
             <span class="logo"></span>
           </div>
@@ -45,12 +45,6 @@ import GithubIcon from '../assets/svg/github.svg';
 
 export default {
   name: 'Sidebar',
-  data() {
-    return {
-      mobileMenuOpen: false,
-      windowWidth: 0,
-    };
-  },
   components: {
     Navigation,
     TwitterIcon,
@@ -59,37 +53,18 @@ export default {
     GithubIcon,
     VueSlideUpDown,
   },
-  watch: {
-    $route() {
-      // on route change, close the mobile menu
-      this.mobileMenuOpen = false;
-
-      // scroll to the top of the page
-      document.getElementById('app').scrollTo(0, 0);
+  computed: {
+    windowWidth() {
+      return this.$store.getters.windowWidth;
     },
-  },
-  mounted() {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.getWindowWidth);
-
-      // Init
-      this.getWindowWidth();
-    });
+    mobileMenuOpen() {
+      return this.$store.getters.mobileMenuOpen;
+    },
   },
   methods: {
-    getWindowWidth() {
-      this.windowWidth = document.documentElement.clientWidth;
+    setMobileMenuState() {
+      return this.$store.commit('SET_MOBILE_MENU_STATE', !this.mobileMenuOpen);
     },
-    toggleMobileMenu() {
-      const w = window.innerWidth;
-
-      if (w <= 768) {
-        this.mobileMenuOpen = !this.mobileMenuOpen;
-      }
-    },
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.getWindowWidth);
   },
 };
 </script>

@@ -50,7 +50,18 @@ export default {
       this.changePrimaryColor('blue');
     }
   },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.setWindowWidth);
+
+      // set the window width
+      this.setWindowWidth();
+    });
+  },
   methods: {
+    setWindowWidth() {
+      this.$store.commit('SET_WINDOW_WIDTH');
+    },
     hexToRGB(str) {
       const RGB_HEX = /^#?(?:([\da-f]{3})[\da-f]?|([\da-f]{6})(?:[\da-f]{2})?)$/i;
       const [, short, long] = String(str).match(RGB_HEX) || [];
@@ -97,6 +108,23 @@ export default {
     },
     gaEvent(category, action, label) {
       this.$ga.event(category, action, label);
+    },
+  },
+  watch: {
+    $route() {
+      // on route change, close the mobile menu
+      this.$store.commit('SET_MOBILE_MENU_STATE', !this.mobileMenuOpen);
+
+      // scroll to the top of the page
+      document.getElementById('app').scrollTo(0, 0);
+    },
+  },
+  computed: {
+    windowWidth() {
+      return this.$store.getters.windowWidth;
+    },
+    mobileMenuOpen() {
+      return this.$store.getters.mobileMenuOpen;
     },
   },
   components: {
