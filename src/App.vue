@@ -35,7 +35,6 @@ export default {
   data() {
     return {
       name: 'Drew Rawitz',
-      showColorPicker: false,
     };
   },
   created() {
@@ -77,7 +76,7 @@ export default {
       return data;
     },
     toggleColorPicker() {
-      this.showColorPicker = !this.showColorPicker;
+      this.$store.commit('TOGGLE_COLOR_PICKER', !this.showColorPicker);
     },
     changePrimaryColor(color) {
       document.documentElement.style.setProperty('--primary', `var(--${color})`);
@@ -113,7 +112,7 @@ export default {
   watch: {
     $route() {
       // on route change, close the mobile menu
-      this.$store.commit('SET_MOBILE_MENU_STATE', !this.mobileMenuOpen);
+      this.$store.commit('SET_MOBILE_MENU_STATE', false);
 
       // scroll to the top of the page
       document.getElementById('app').scrollTo(0, 0);
@@ -125,6 +124,9 @@ export default {
     },
     mobileMenuOpen() {
       return this.$store.getters.mobileMenuOpen;
+    },
+    showColorPicker() {
+      return this.$store.getters.showColorPicker;
     },
   },
   components: {
@@ -165,15 +167,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 1350px;
-  background: #fff;
   flex: 1;
   margin: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   height: calc(100vh - 40px);
   overflow: auto;
 
   @media (min-width: 768px) {
     max-height: 850px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   @media (max-width: 500px) {

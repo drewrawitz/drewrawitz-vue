@@ -57,6 +57,11 @@ export default {
   justify-content: center;
   flex-direction: column;
   color: #fff;
+
+  @media (max-width: 767px) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 .homepage-heading {

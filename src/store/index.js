@@ -6,6 +6,7 @@ Vue.use(Vuex);
 const getters = {
   windowWidth: state => state.windowWidth,
   mobileMenuOpen: state => state.mobileMenuOpen,
+  showColorPicker: state => state.showColorPicker,
 };
 
 const mutations = {
@@ -17,11 +18,15 @@ const mutations = {
       state.mobileMenuOpen = val;
     }
   },
+  TOGGLE_COLOR_PICKER(state, val) {
+    state.showColorPicker = val;
+  },
 };
 
 const state = {
   windowWidth: 0,
   mobileMenuOpen: false,
+  showColorPicker: false,
 };
 
 export default new Vuex.Store({
