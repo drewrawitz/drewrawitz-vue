@@ -6,7 +6,7 @@
         <h1 class="homepage-heading">Hello!</h1>
       </transition>
       <transition name="fade" appear>
-        <p class="homepage-intro">My name is <span class="h-fw800">Drew Rawitz</span>, and I'm a Senior Front-end Developer working remotely out of Raleigh, North Carolina!</p>
+        <p class="homepage-intro">My name is <span class="h-fw800">Drew Rawitz</span>, and I'm a Senior Front-end Developer working remotely out of Albuquerque, New Mexico!</p>
       </transition>
       <transition name="fade" appear>
         <div class="homepage-cta">
