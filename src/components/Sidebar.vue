@@ -3,12 +3,17 @@
     <div class="app-sidebar__container">
       <div class="app-sidebar__content">
         <div class="app-sidebar__header" v-on:click="setMobileMenuState">
-          <div class="logo-wrapper">
-            <span class="logo"></span>
+          <div class="header__left">
+            <div class="logo-wrapper">
+              <span class="logo"></span>
+            </div>
+            <div class="profile">
+              <h2>Drew Rawitz</h2>
+              <p>Front-end Developer</p>
+            </div>
           </div>
-          <div class="profile">
-            <h2>Drew Rawitz</h2>
-            <p>Front-end Developer</p>
+          <div class="mobile-menu">
+            <MenuIcon />
           </div>
         </div>
         <vue-slide-up-down :active="windowWidth >= 768 || mobileMenuOpen" :duration="300">
@@ -39,6 +44,7 @@
 import VueSlideUpDown from 'vue-slide-up-down';
 import Navigation from './Navigation';
 import TwitterIcon from '../assets/svg/twitter.svg';
+import MenuIcon from '../assets/svg/menu.svg';
 import LinkedInIcon from '../assets/svg/linkedin.svg';
 import InstagramIcon from '../assets/svg/instagram.svg';
 import GithubIcon from '../assets/svg/github.svg';
@@ -50,6 +56,7 @@ export default {
     TwitterIcon,
     LinkedInIcon,
     InstagramIcon,
+    MenuIcon,
     GithubIcon,
     VueSlideUpDown,
   },
@@ -93,8 +100,29 @@ export default {
   @media (max-width: 767px) {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px;
+    cursor: pointer;
+  }
+}
+
+.header__left {
+  @media (max-width: 767px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.mobile-menu {
+  display: none;
+
+  @media (max-width: 767px) {
+    display: block;
+
+    svg {
+      fill: #fff;
+      font-size: 30px;
+    }
   }
 }
 

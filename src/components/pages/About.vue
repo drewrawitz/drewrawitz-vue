@@ -43,9 +43,23 @@ export default {
 
 <style scoped>
 .image-right {
-  float: right;
-  margin-left: 30px;
-  margin-bottom: 20px;
+  @media (min-width: 600px) {
+    float: right;
+    margin-left: 30px;
+    margin-bottom: 20px;
+  }
+
+  figure {
+    @media (max-width: 599px) {
+      text-align: left;
+    }
+  }
+
+  figcaption {
+    @media (max-width: 599px) {
+      margin-left: 0;
+    }
+  }
 }
 
 blockquote {

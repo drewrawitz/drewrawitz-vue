@@ -95,7 +95,15 @@ export default {
 }
 
 .workflow-group__list {
-  display: flex;
+  @media (max-width: 644px) {
+    > *:not(:last-child) {
+      margin-bottom: 45px;
+    }
+  }
+
+  @media (min-width: 645px) {
+    display: flex;
+  }
 
   ul {
     flex: 1;
