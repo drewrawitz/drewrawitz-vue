@@ -19,7 +19,7 @@
               <li>My headphones are the <a href="https://www.amazon.com/Audio-Technica-ATH-M50x-Professional-Monitor-Headphones/dp/B00HVLUR86" target="_blank">Audio-Technica ATH-M50x</a>'s.</li>
             </ul>
             <figure>
-              <img v-img src="../../assets/workspace.jpg" alt="Workspace" style="max-width: 200px;" />
+              <img v-img src="../../assets/bg_new-setup.jpg" alt="Workspace" style="max-width: 200px;" />
               <figcaption>My current workspace. Click to view full size.</figcaption>
             </figure>
           </div>
